@@ -2,7 +2,7 @@ let btn = document.createElement("button");
 btn.textContent = 'Reset the number of squares';
 
 let container= document.querySelector(".container")
-container.style="display:flex; flex-direction:column; height:500px; width:500px;"
+container.style=" "
 document.body.insertBefore(btn,container)
 
 btn.addEventListener("click", function(){
@@ -20,7 +20,9 @@ for(i=0 ; i<squares ; i++){
         let div = document.createElement("div")
         divs.appendChild(div);
         div.style = "flex:1 1 auto; border:1px solid black;"
-        div.addEventListener("mouseover",()=> div.style.backgroundColor="black")
+        div.addEventListener("mouseover",()=> {
+            let randomColor = `rgb(${Math.floor(Math.random()*256)},${Math.floor(Math.random() *256)},${Math.floor(Math.random() *256)})`
+            div.style.backgroundColor=randomColor})
     }
 }
 })
