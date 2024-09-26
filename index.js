@@ -20,9 +20,14 @@ for(i=0 ; i<squares ; i++){
         let div = document.createElement("div")
         divs.appendChild(div);
         div.style = "flex:1 1 auto; border:1px solid black;"
+        div.hoverCount = 0;
         div.addEventListener("mouseover",()=> {
+            let opaque = (div.hoverCount++) / 10;
             let randomColor = `rgb(${Math.floor(Math.random()*256)},${Math.floor(Math.random() *256)},${Math.floor(Math.random() *256)})`
-            div.style.backgroundColor=randomColor})
+            div.style.backgroundColor=randomColor
+            div.style.opacity = opaque;
+        })
+
     }
 }
 })
